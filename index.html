@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+		<head>
+		<meta http-equiv="Content-Type" charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="metadata tool">
+		<meta name="keywords" content="DataPLAN, Horizon Europe, dfg, FAIR, data management plan, DMP, free, open-source">
+		
+		<!-- disable cache accross browsers for testing purpose -->
+		
+		<meta http-equiv="Expires" content="0" />
+		<title>DataPLAN, generate a data management plan DMP easily</title>
+		
+		<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+		<!-- loading css styleSheets -->
+
+		<link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/custom.css" rel="stylesheet"/>
+		<script src="js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"> </script>		
+		<link href="favicon.png" rel="icon">
+		
+		<script>
+
+		</script>
+			</head>
+			
+		<body  class="d-grid gap-5" style="background: rgb(45, 62, 80, 0.2); "  >
+		
+	
+				<div class="row" style="background: rgb(45, 62, 80); height: 3.25rem; margin: 0 0 0 0px; padding: 0 0 0 0; ">
+					<a class="" href="https://nfdi4plants.org/" >
+						<img src="images/logo.png" alt="Logo" width="32" height="32" style="position: absolute; margin: 8px 12px 8px 12px; left: 0px; padding-top: 0px;" />
+					</a>
+					
+					<div class="justify-content-center row d-flex align-items-center" style="margin: 0 0 0 0; ; padding: 0 0 0 0; height: 3.25rem;  ">
+						<div class="btn-group d-md-none g-0 dropdown col-auto d-flex align-items-center" >
+							<button type="button" class="btn rounded-0 border-0 g-0 btn-nav " data-bs-toggle="dropdown" aria-expanded="false" id="menu">
+								Menu &nbsp;
+								<span style="display: inline-block; color: rgb(79, 179, 217); letter-spacing: 2px; font-size: 1em; transform: scaleX(2); transform-origin: 1 0;"> ∨ </span>
+							</button>
+							<ul class="dropdown-menu">
+							<li>
+									<button id="metadata" class="dropdown-item" onclick=''>metadata</button>
+								</li>
+                               
+							</ul>
+						</div>
+
+						<div class="btn-group d-none g-0 d-md-block dropdown col-auto"  >
+							<button type="button" class="btn border-0 rounded-0 g-0 btn-nav" data-bs-toggle="dropdown" aria-expanded="false" id="metadataMenu" >
+								metadata &nbsp;
+
+								<span style="display: inline-block; color: rgb(79, 179, 217); letter-spacing: 2px; font-size: 1em; transform: scaleX(2); transform-origin: 1 0;"> ∨ </span>
+							</button>
+							<ul class="dropdown-menu" >
+								<li>
+									<button id="metadata3" class="dropdown-item" >Metadata</button>
+								</li>
+                                
+							</ul>
+						</div>
+
+						
+					</div>
+				</div>
+				
+                <div class="container-sm d-grid gap-3" >
+                    <div class=" d-flex justify-content-center ">
+                        <button type="button" class="btn btn-primary">What type of organism(s) will you be working with</button> 
+                    </div>
+                    
+                    <div class="row justify-content-md-center">
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="PlantCheck">
+                        <label class="form-check-label" for="PlantCheck">
+                          Plant
+                        </label>
+                      </div>
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="AnimalCheck">
+                        <label class="form-check-label" for="AnimalCheck">
+                          Animal
+                        </label>
+                      </div>
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="BacteriaCheck">
+                        <label class="form-check-label" for="BacteriaCheck">
+                          Bacteria
+                        </label>
+                      </div>
+                    </div>
+                </div>
+			
+
+                <div class="container-sm d-grid gap-3" >
+                    <div class=" d-flex justify-content-center ">
+                        <button type="button" class="btn btn-primary">What environment(s) will the experiment(s) take place in</button> 
+                    </div>
+                    
+                    <div class="row justify-content-md-center">
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="FieldCheck">
+                        <label class="form-check-label" for="FieldCheck">
+                          In the field
+                        </label>
+                      </div>
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="GlasshouseCheck">
+                        <label class="form-check-label" for="GlasshouseCheck">
+                          Greenhouse/glasshouse
+                        </label>
+                      </div>
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="ChamberCheck">
+                        <label class="form-check-label" for="ChamberCheck">
+                          Controlled environment chamber
+                        </label>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="container-sm d-grid gap-3" >
+                    <div class=" d-flex justify-content-center ">
+                        <button type="button" class="btn btn-primary">What type(s) of data will be collected</button> 
+                    </div>
+                    
+                    <div class="row justify-content-md-center">
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="GenomicCheck">
+                        <label class="form-check-label" for="GenomicCheck">
+                            Genomic
+                        </label>
+                      </div>
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="GenomicCheck">
+                        <label class="form-check-label" for="GenomicCheck">
+                          Genomic
+                        </label>
+                      </div>
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="MetabolicCheck">
+                        <label class="form-check-label" for="MetabolicCheck">
+                          Metabolic
+                        </label>
+                      </div>
+
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="ProteomicCheck">
+                        <label class="form-check-label" for="ProteomicCheck">
+                          Proteomic
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">                   
+                <button type="button" class="btn btn-success">Get Metadata Completeness Suggestions</button> 
+                </div>
+	  </body>		
+</html>

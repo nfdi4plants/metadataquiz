@@ -1,0 +1,38 @@
+﻿type,acronym,description,biological data domain,link,submission,spreadsheet
+Minimum Information standards,MIAPPE,Minimum Information About a Plant Phenotyping Experiment,phenomics,https://www.miappe.org/,,YES
+Minimum Information standards,MIAME,Minimum Information About a Microarray Experiment,transcriptomics,,,NO
+Minimum Information standards,MIxS,Minimum Information about a Genome Sequence/ Minimum Information about a Metagenomic Sequence/Sample,(meta)genome,https://github.com/GenomicsStandardsConsortium/mixs,,Not to be added- is 'upper level' of other MI lists
+Minimum Information standards,MIGSPlant,Minimum information about a genome sequence: Plant,(meta)genome,https://genomicsstandardsconsortium.github.io/mixs/MIGSPlant/,,YES
+Minimum Information standards,MIGS,** Is now divided into multiple MIGS*** https://genomicsstandardsconsortium.github.io/mixs/#checklists,(meta)genome,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2409278/,,
+Minimum Information standards,MIMS,Metagenome or Environmental (part of MIxS),(meta)genome,https://pubmed.ncbi.nlm.nih.gov/18479204/,,YES
+Minimum Information standards,MIMARKSSpecimen,Minimal Information about a Marker Specimen: specimen (part of MIxS),(meta)genome,https://pubmed.ncbi.nlm.nih.gov/21552244/,,YES
+Minimum Information standards,MIMARKSSurvey,Minimal Information about a Marker Specimen: survey,(meta)genome,,,YES
+Minimum Information standards,MIAPE,Minimum Information About a Proteomics Experiment ,proteome,http://www.psidev.info/miape,,
+Minimum Information standards,MIAPE,MIAPE- MS (Mass Spectrometry),proteome,https://www.psidev.info/sites/default/files/2018-03/MIAPE_MS_2.98.pdf,,YES
+Minimum Information standards,MIAPE,MIAPE-MSI (Mass Spectrometry Informatics),proteome,https://www.psidev.info/sites/default/files/2018-03/MIAPE_MSI_1.1.pdf,,
+Minimum Information standards,MIAPE,MIAPE-Quant (Mass Spectrometry Quantification),proteome,https://www.psidev.info/sites/default/files/2018-03/MIAPE_Quant_v1.0_Final_0.pdf,,
+Minimum Information standards,MIAPE,MIAPE-GE (Gel Electrophoresis),proteome,https://www.psidev.info/sites/default/files/MIAPE_GE_1_4.pdf,,
+Minimum Information standards,MIAPE,MIAPE-GI (Gel Informatics),proteome,https://www.psidev.info/sites/default/files/2018-03/miape-gi-v1.pdf,,
+Minimum Information standards,MIAPE,MIAPE-CC (Column Chromatography),proteome,https://www.psidev.info/sites/default/files/2018-03/MIAPE_CC_1.1.pdf,,
+Minimum Information standards,MIAPE,MIAPE-CE (Capillary Electrophoresis),proteome,,,
+Minimum Information standards,MIAPE,MIMIx (Molecular Interactions),proteome,,,
+Minimum Information standards,MINSEQE,Minimum Information about a high-throughput SEQuencing Experiment,transcriptome,http://fged.org/projects/minseqe/,,NO
+Minimum Information standards,MISAG,MISAG,(meta)genome,https://www.nature.com/articles/nbt.3893,,NO
+Minimum Information standards,MIMAG,MISAG,(meta)genome,https://www.nature.com/articles/nbt.3893,,NO
+Minimum Information standards,MIUViG,MISAG,(meta)genome,https://pubmed.ncbi.nlm.nih.gov/30556814/,,NO
+Repository,EBI-MetaboLights,EBI-MetaboLights,metabolome,https://www.ebi.ac.uk/metabolights/,,NO
+Repository,EBI-PRIDE,PRoteomics IDEntifications Database,proteome,https://www.ebi.ac.uk/pride/,https://www.ebi.ac.uk/pride/markdownpage/submitdatapage,NO
+Repository,NCBI-BioProject,NCBI-BioProject,projects,https://www.ncbi.nlm.nih.gov/bioproject/,,NO
+Repository,NCBI-BioSample,NCBI-BioSample,samples,https://www.ncbi.nlm.nih.gov/biosample,,NO
+Repository,NCBI-GenBank,NCBI-GenBank,genome,https://www.ncbi.nlm.nih.gov/genbank/,,NO
+Repository,NCBI-GEO,Gene Expression Omnibus,transcriptome,https://www.ncbi.nlm.nih.gov/geo/,https://www.ncbi.nlm.nih.gov/geo/info/submission.html,NO
+Repository,NCBI-SRA,Sequence Read Archive,genome / transcriptome sequences,https://www.ncbi.nlm.nih.gov/sra/,,NO
+Repository,e!DAL-PGP,Plant Genomics & Phenomics Research Data Repository,phenome,https://edal.ipk-gatersleben.de/index.html,,NO
+Repository,EBI-BioImage Archive,EBI-BioImage Archive,"imaging, microscopy",https://www.ebi.ac.uk/bioimage-archive/,,NO
+Repository,EBI-ArrayExpress,Archive of Functional Genomics Data,transcriptome,https://www.ebi.ac.uk/arrayexpress/,,NO
+Repository,EBI-ENA,European Nucleotide Archive,genome / transcriptome sequences,https://www.ebi.ac.uk/ena/,,"ERC000011, ERC000020, ERC00035, ERC000037"
+Repository,EBI-EMPIAR,EBI-EMPIAR,"imaging, microscopy",https://www.ebi.ac.uk/pdbe/emdb/empiar/,,NO
+Repository,EBI-BioModels,EBI-BioModels,models,https://www.ebi.ac.uk/biomodels/,,NO
+Repository,EBI-BioSamples,EBI-BioSamples,samples,https://www.ebi.ac.uk/biosamples/,,NO
+Repository,EBI-BioStudies,EBI-BioStudies,projects,https://www.ebi.ac.uk/biostudies/,,NO
+Repository,Metabolomics Workbench,Metabolomics Workbench,metabolome,https://www.metabolomicsworkbench.org/,,NO
