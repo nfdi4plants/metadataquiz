@@ -3,12 +3,12 @@
 		<head>
 		<meta http-equiv="Content-Type" charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="metadata tool">
-		<meta name="keywords" content="DataPLAN, Horizon Europe, dfg, FAIR, data management plan, DMP, free, open-source">
+		<meta name="keywords" content="">
 		
 		<!-- disable cache accross browsers for testing purpose -->
 		
 		<meta http-equiv="Expires" content="0" />
-		<title>DataPLAN, generate a data management plan DMP easily</title>
+		<title>Metadata Suggestion Tool</title>
 		
 		<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 		<!-- loading css styleSheets -->
@@ -18,9 +18,12 @@
 		<script src="js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"> </script>		
 		<link href="favicon.png" rel="icon">
 		
-		<script>
+		<style>
+      .smallRef{
+        font-size: 5px;
 
-		</script>
+      }
+		</style>
 			</head>
 			
 		<body  class="d-grid gap-5" style="background: rgb(45, 62, 80, 0.2); "  >
@@ -63,14 +66,14 @@
 					</div>
 				</div>
 				
-                <div class="container-sm d-grid gap-3" >
+                <div id="q1" class="container-sm d-grid gap-3" >
                     <div class=" d-flex justify-content-center ">
                         <button type="button" class="btn btn-primary">What type of organism(s) will you be working with</button> 
                     </div>
                     
                     <div class="row justify-content-md-center">
                       <div class="col-auto form-check   form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="" id="PlantCheck">
+                        <input class="form-check-input" type="checkbox" value="" id="PlantCheck" checked=true>
                         <label class="form-check-label" for="PlantCheck">
                           Plant
                         </label>
@@ -91,7 +94,7 @@
                 </div>
 			
 
-                <div class="container-sm d-grid gap-3" >
+                <div id="q2" class="container-sm d-grid gap-3" >
                     <div class=" d-flex justify-content-center ">
                         <button type="button" class="btn btn-primary">What environment(s) will the experiment(s) take place in</button> 
                     </div>
@@ -123,36 +126,202 @@
                         <button type="button" class="btn btn-primary">What type(s) of data will be collected</button> 
                     </div>
                     
-                    <div class="row justify-content-md-center">
+                    <div id="q3" class="row justify-content-md-center">
                       <div class="col-auto form-check   form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="" id="GenomicCheck">
-                        <label class="form-check-label" for="GenomicCheck">
-                            Genomic
+                        <input class="form-check-input" type="checkbox" value="" id="PhenotypicCheck" checked=true>
+                        <label class="form-check-label" for="PhenotypicCheck">
+                          Phenotypic
                         </label>
                       </div>
                       <div class="col-auto form-check   form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="" id="GenomicCheck">
+                        <input class="form-check-input" type="checkbox" value="" id="GenomicCheck" checked=true>
                         <label class="form-check-label" for="GenomicCheck">
                           Genomic
                         </label>
                       </div>
                       <div class="col-auto form-check   form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="" id="MetabolicCheck">
-                        <label class="form-check-label" for="MetabolicCheck">
-                          Metabolic
+                        <input class="form-check-input" type="checkbox" value="" id="TranscriptomicCheck" checked=true>
+                        <label class="form-check-label" for="TranscriptomicCheck">
+                          Transcriptomic
+                        </label>
+                      </div>
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox"  value="" id="MetabolomicCheck" checked=true>
+                        <label class="form-check-label" for="MetabolomicCheck">
+                          Metabolomic
                         </label>
                       </div>
 
                       <div class="col-auto form-check   form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="" id="ProteomicCheck">
+                        <input class="form-check-input" type="checkbox" value="" id="ProteomicCheck" checked=true>
                         <label class="form-check-label" for="ProteomicCheck">
                           Proteomic
                         </label>
                       </div>
                     </div>
-                </div>
+                </div>  <!-- Button trigger modal -->
                 <div class="d-flex justify-content-center">                   
-                <button type="button" class="btn btn-success">Get Metadata Completeness Suggestions</button> 
+                <button type="button" class="btn btn-success" onclick="updateSuggestions()" data-bs-toggle="modal" data-bs-target="#suggestionModal">Get Metadata Completeness Suggestions</button> 
                 </div>
+              
+
+
+        <!-- Modal -->
+        <div class="modal modal-xl fade" id="suggestionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="suggestionModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="suggestionModalLabel">For your experimental metadata, we recommend:</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col">
+                   
+                  </div>
+                  <div class="col text-center">
+                    <button type="button" class="btn btn-primary text">Repositories</button> 
+                  </div>
+                  <div class="col-6 text-center">
+                    <button type="button" class="btn btn-primary text">Minimum Information Standards</button> 
+                  </div>
+                  <div class="col text-center">
+                    <button type="button" class="btn btn-primary text">Swate Templates</button> 
+                  </div>
+                </div>
+                <div class="row" id="suggestionContent">
+                  
+                </div>
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+              </div>
+            </div>
+          </div>
+        </div>
 	  </body>		
+    <script src="js/metadata.js"></script>
+    <script>
+      console.log(metadata);
+      
+      function updateSuggestions(){
+        let suggestionContent = document.getElementById("suggestionContent");
+        suggestionContent.innerHTML= "";
+        function getChecked(nodes){
+         let ids=[];
+         nodes.forEach(function (ele, index){
+            if (ele.checked == true){
+            ids.push(ele.id.split("Check")[0]);
+          }
+          }) ;          
+          return ids;
+        }
+        const q1 = document.getElementById("q1").querySelectorAll(".form-check-input");
+        const q2 = document.getElementById("q2").querySelectorAll(".form-check-input");
+        const q3 = document.getElementById("q3").querySelectorAll(".form-check-input");
+        let q1Ids = getChecked(q1);
+        let q2Ids = getChecked(q2);
+        let q3Ids = getChecked(q3);
+        
+        let repoText  =   ["","","","",""];
+        let misText   =   ["","","","",""];
+        let swateText =   ["","","","",""];
+        
+        
+          
+          for ( const  [index, element] of metadata.entries() ){
+
+            for (const idd in q3Ids){
+              
+              if (element["biological data domain"].toLowerCase().includes(q3Ids[idd].toLowerCase())){
+                console.log(element["biological data domain"]+ " include "+ q3Ids[idd].toLowerCase())
+                var loc;
+                switch(q3Ids[idd].toLowerCase()){
+                 case "phenotypic":
+                  loc = 0;
+                  break;
+                  case "genomic":
+                  loc = 1;
+                  break;
+                  case "transcriptomic":
+                  loc = 2;
+                  break;
+                  case "metabolomic":
+                  loc = 3;
+                  break;
+                  case "proteomic":
+                  loc = 4;
+                  break;
+                }
+                
+                
+                switch(element.type){
+                  case "Repository":
+                    repoText[loc] += ("<b>"+element.acronym + "</b> ("+element.description +
+                    ")<br><a href='"+element.link +"' class='smallRef'> Click here to learn more about"+
+                      element.acronym +"</a><br>");
+                  break;
+                  case "Minimum Information standards":
+                   misText[loc] +=   ("<b>"+element.acronym + "</b> ("+element.description +
+                   ")<br><a href='"+element.link +"' class='smallRef'> Click here to learn more about"
+                    +element.acronym +"</a><br>");
+                   break;
+                }
+                
+              
+                
+              }
+              
+
+
+
+          } 
+
+
+        }
+
+          
+        for (const idd in q3Ids){
+            var loc;
+                switch(q3Ids[idd].toLowerCase()){
+                 case "phenotypic":
+                  loc = 0;
+                  break;
+                  case "genomic":
+                  loc = 1;
+                  break;
+                  case "transcriptomic":
+                  loc = 2;
+                  break;
+                  case "metabolomic":
+                  loc = 3;
+                  break;
+                  case "proteomic":
+                  loc = 4;
+                  break;
+                }
+                  var htmlText = `<div class="row border border-3">
+                                    <div class="col-2 border border-2">
+                                      `+q3Ids[idd]+` 
+                                    </div>
+                                    <div class="col-2 border border-2">
+                                      `+repoText[loc]+`
+                                    </div>
+                                    <div class="col-6 border border-2">
+                                      `+misText[loc]+`
+                                    </div>
+                                    <div class="col-2 border border-2">
+                                      ...
+                                    </div>
+                                  </div>
+                                  `
+                suggestionContent.innerHTML += htmlText;
+             }
+
+
+      }
+
+      </script>
 </html>

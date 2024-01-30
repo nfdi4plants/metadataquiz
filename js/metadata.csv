@@ -1,5 +1,5 @@
 ﻿q1,q2,type,acronym,description,biological data domain,link,submission,spreadsheet
-Plant,,Minimum Information standards,MIAPPE,Minimum Information About a Plant Phenotyping Experiment,phenomic,https://www.miappe.org/,,YES
+Plant,,Minimum Information standards,MIAPPE,Minimum Information About a Plant Phenotyping Experiment,phenotypic,https://www.miappe.org/,,YES
 Plant,,Minimum Information standards,MIAME,Minimum Information About a Microarray Experiment,transcriptomic,,,NO
 Plant,,Minimum Information standards,MIxS,Minimum Information about a Genome Sequence/ Minimum Information about a Metagenomic Sequence/Sample,(meta)genomic,https://github.com/GenomicsStandardsConsortium/mixs,,Not to be added- is 'upper level' of other MI lists
 Plant,,Minimum Information standards,MIGSPlant,Minimum information about a genome sequence: Plant,(meta)genomic,https://genomicsstandardsconsortium.github.io/mixs/MIGSPlant/,,YES
@@ -8,14 +8,14 @@ Plant,,Minimum Information standards,MIMS,Metagenome or Environmental (part of M
 Plant,,Minimum Information standards,MIMARKSSpecimen,Minimal Information about a Marker Specimen: specimen (part of MIxS),(meta)genomic,https://pubmed.ncbi.nlm.nih.gov/21552244/,,YES
 Plant,,Minimum Information standards,MIMARKSSurvey,Minimal Information about a Marker Specimen: survey,(meta)genomic,,,YES
 Plant,,Minimum Information standards,MIAPE,Minimum Information About a Proteomics Experiment ,proteomic,http://www.psidev.info/miape,,
-Plant,,Minimum Information standards,MIAPE,MIAPE- MS (Mass Spectrometry),proteomic,https://www.psidev.info/sites/default/files/2018-03/MIAPE_MS_2.98.pdf,,YES
-Plant,,Minimum Information standards,MIAPE,MIAPE-MSI (Mass Spectrometry Informatics),proteomic,https://www.psidev.info/sites/default/files/2018-03/MIAPE_MSI_1.1.pdf,,
-Plant,,Minimum Information standards,MIAPE,MIAPE-Quant (Mass Spectrometry Quantification),proteomic,https://www.psidev.info/sites/default/files/2018-03/MIAPE_Quant_v1.0_Final_0.pdf,,
-Plant,,Minimum Information standards,MIAPE,MIAPE-GE (Gel Electrophoresis),proteomic,https://www.psidev.info/sites/default/files/MIAPE_GE_1_4.pdf,,
-Plant,,Minimum Information standards,MIAPE,MIAPE-GI (Gel Informatics),proteomic,https://www.psidev.info/sites/default/files/2018-03/miape-gi-v1.pdf,,
-Plant,,Minimum Information standards,MIAPE,MIAPE-CC (Column Chromatography),proteomic,https://www.psidev.info/sites/default/files/2018-03/MIAPE_CC_1.1.pdf,,
-Plant,,Minimum Information standards,MIAPE,MIAPE-CE (Capillary Electrophoresis),proteomic,,,
-Plant,,Minimum Information standards,MIAPE,MIMIx (Molecular Interactions),proteomic,,,
+Plant,,Minimum Information standards,MIAPE-MS,MIAPE- MS (Mass Spectrometry),proteomic,https://www.psidev.info/sites/default/files/2018-03/MIAPE_MS_2.98.pdf,,YES
+Plant,,Minimum Information standards,MIAPE-MSI,MIAPE-MSI (Mass Spectrometry Informatics),proteomic,https://www.psidev.info/sites/default/files/2018-03/MIAPE_MSI_1.1.pdf,,
+Plant,,Minimum Information standards,MIAPE-Quant,MIAPE-Quant (Mass Spectrometry Quantification),proteomic,https://www.psidev.info/sites/default/files/2018-03/MIAPE_Quant_v1.0_Final_0.pdf,,
+Plant,,Minimum Information standards,MIAPE-GE,MIAPE-GE (Gel Electrophoresis),proteomic,https://www.psidev.info/sites/default/files/MIAPE_GE_1_4.pdf,,
+Plant,,Minimum Information standards,MIAPE-GI,MIAPE-GI (Gel Informatics),proteomic,https://www.psidev.info/sites/default/files/2018-03/miape-gi-v1.pdf,,
+Plant,,Minimum Information standards,MIAPE-CC,MIAPE-CC (Column Chromatography),proteomic,https://www.psidev.info/sites/default/files/2018-03/MIAPE_CC_1.1.pdf,,
+Plant,,Minimum Information standards,MIAPE-CE,MIAPE-CE (Capillary Electrophoresis),proteomic,,,
+Plant,,Minimum Information standards,MIMix,MIMIx (Molecular Interactions),proteomic,,,
 Plant,,Minimum Information standards,MINSEQE,Minimum Information about a high-throughput SEQuencing Experiment,transcriptomic,http://fged.org/projects/minseqe/,,NO
 Plant,,Minimum Information standards,MISAG,MISAG,(meta)genomic,https://www.nature.com/articles/nbt.3893,,NO
 Plant,,Minimum Information standards,MIMAG,MISAG,(meta)genomic,https://www.nature.com/articles/nbt.3893,,NO
