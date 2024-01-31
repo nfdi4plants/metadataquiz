@@ -2,13 +2,13 @@
 <html lang="en">
 		<head>
 		<meta http-equiv="Content-Type" charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="metadata tool">
-		<meta name="keywords" content="">
+		<meta name="description" content="Metadata recommendation tool is developed by DataPLANT and IBG-4 of Research Center Jülich. The motivation is to make metadata annotation more approachable. To support researchers with metadata annotation over the entire investigation lifecycle.">
+		<meta name="keywords" content="Metadata, tool, metadata completeness, minimal standard">
 		
 		<!-- disable cache accross browsers for testing purpose -->
 		
 		<meta http-equiv="Expires" content="0" />
-		<title>Metadata Suggestion Tool</title>
+		<title>Metadata recommendation Tool</title>
 		
 		<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 		<!-- loading css styleSheets -->
@@ -27,6 +27,12 @@
         font-size: 0.9rem;
         line-height: 1.1rem;
       }
+      button:disabled{
+          border: 1px solid #999999 !important;
+          background-color: #1FC2A7 !important;
+
+          color: #FFFFFF !important;
+        }
 		</style>
 			</head>
 			
@@ -265,11 +271,13 @@
                   case "Repository":
                     repoText[loc] += ("<b>"+element.acronym + "</b> <span class='description'>("+element.description +
                     ")</span><br><a href='"+element.link +"' class='smallRef'> Click here to learn more about "+
-                      element.acronym +"</a><br>");
+                      element.acronym +"</a> <br> <a href='"+element.submission +"' class='smallRef'> Click here to submit to "
+                    +element.acronym +"</a><br>");
                   break;
                   case "Minimum Information standards":
                    misText[loc] +=   ("<b>"+element.acronym + "</b> <span class='description'>("+element.description +
                    ")</span><br><a href='"+element.link +"' class='smallRef'> Click here to learn more about "
+                    +element.acronym +"</a> <br> <a href='"+element.submission +"' class='smallRef'> Click here to submit to "
                     +element.acronym +"</a><br>");
                    break;
                 }
