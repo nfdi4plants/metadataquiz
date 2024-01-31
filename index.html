@@ -72,7 +72,7 @@
 				
                 <div id="q1" class="container-sm d-grid gap-3" >
                     <div class=" d-flex justify-content-center ">
-                        <button type="button" class="btn btn-primary">What type of organism(s) will you be working with</button> 
+                        <button type="button" class="btn btn-primary" disabled>What type of organism(s) will you be working with?</button> 
                     </div>
                     
                     <div class="row justify-content-md-center">
@@ -100,7 +100,7 @@
 
                 <div id="q2" class="container-sm d-grid gap-3" >
                     <div class=" d-flex justify-content-center ">
-                        <button type="button" class="btn btn-primary">What environment(s) will the experiment(s) take place in</button> 
+                        <button type="button" class="btn btn-primary" disabled>What environment(s) will the experiment(s) take place in?</button> 
                     </div>
                     
                     <div class="row justify-content-md-center">
@@ -127,7 +127,7 @@
 
                 <div class="container-sm d-grid gap-3" >
                     <div class=" d-flex justify-content-center ">
-                        <button type="button" class="btn btn-primary">What type(s) of data will be collected</button> 
+                        <button type="button" class="btn btn-primary" disabled>What type(s) of data will be collected?</button> 
                     </div>
                     
                     <div id="q3" class="row justify-content-md-center">
@@ -165,7 +165,7 @@
                     </div>
                 </div>  <!-- Button trigger modal -->
                 <div class="d-flex justify-content-center">                   
-                <button type="button" class="btn btn-success" onclick="updateSuggestions()" data-bs-toggle="modal" data-bs-target="#suggestionModal">Get Metadata Completeness Suggestions</button> 
+                <button type="button" class="btn btn-primary" onclick="updateSuggestions()" data-bs-toggle="modal" data-bs-target="#suggestionModal">Get Metadata Completeness Suggestions</button> 
                 </div>
               
 
@@ -184,13 +184,13 @@
                    
                   </div>
                   <div class="col text-center">
-                    <button type="button" class="btn btn-primary text">Repositories</button> 
+                    <button type="button" class="btn btn-primary text" disabled>Repositories</button> 
                   </div>
                   <div class="col-6 text-center">
-                    <button type="button" class="btn btn-primary text">Minimum Information Standards</button> 
+                    <button type="button" class="btn btn-primary text" disabled>Minimum Information Standards</button> 
                   </div>
                   <div class="col text-center">
-                    <button type="button" class="btn btn-primary text">Swate Templates</button> 
+                    <button type="button" class="btn btn-primary text" disabled>Swate Templates</button> 
                   </div>
                 </div>
                 <div class="row" id="suggestionContent">
@@ -200,7 +200,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Understood</button>
+                <!--<button type="button" class="btn btn-primary">Understood</button>-->
               </div>
             </div>
           </div>
