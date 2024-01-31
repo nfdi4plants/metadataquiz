@@ -20,8 +20,12 @@
 		
 		<style>
       .smallRef{
-        font-size: 5px;
-
+        font-size: 0.7rem;
+        line-height: 0.9rem;
+      }
+      .description{
+        font-size: 0.9rem;
+        line-height: 1.1rem;
       }
 		</style>
 			</head>
@@ -259,13 +263,13 @@
                 
                 switch(element.type){
                   case "Repository":
-                    repoText[loc] += ("<b>"+element.acronym + "</b> ("+element.description +
-                    ")<br><a href='"+element.link +"' class='smallRef'> Click here to learn more about"+
+                    repoText[loc] += ("<b>"+element.acronym + "</b> <span class='description'>("+element.description +
+                    ")</span><br><a href='"+element.link +"' class='smallRef'> Click here to learn more about"+
                       element.acronym +"</a><br>");
                   break;
                   case "Minimum Information standards":
-                   misText[loc] +=   ("<b>"+element.acronym + "</b> ("+element.description +
-                   ")<br><a href='"+element.link +"' class='smallRef'> Click here to learn more about"
+                   misText[loc] +=   ("<b>"+element.acronym + "</b> <span class='description'>("+element.description +
+                   ")</span><br><a href='"+element.link +"' class='smallRef'> Click here to learn more about"
                     +element.acronym +"</a><br>");
                    break;
                 }
@@ -302,7 +306,7 @@
                   loc = 4;
                   break;
                 }
-                  var htmlText = `<div class="row border border-3">
+                  var htmlText = `<div class="row ">
                                     <div class="col-2 border border-2">
                                       `+q3Ids[idd]+` 
                                     </div>
