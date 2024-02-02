@@ -61,7 +61,7 @@
 							</button>
 							<ul class="dropdown-menu">
 							<li>
-									<a id="metadata" class="dropdown-item" href="https://github.com/xiaoranzhou/metadata">github source code</a>
+									<a id="metadata1" class="dropdown-item" href="https://github.com/xiaoranzhou/metadata">github source code</a>
 								</li>
                                
 							</ul>
@@ -75,7 +75,7 @@
 							</button>
 							<ul class="dropdown-menu" >
 								<li>
-									<a id="metadata" class="dropdown-item" href="https://github.com/xiaoranzhou/metadata">github source code</a>
+									<a id="metadata2" class="dropdown-item" href="https://github.com/xiaoranzhou/metadata">github source code</a>
 								</li>
                                 
 							</ul>
@@ -201,7 +201,7 @@
                     </div>
                 </div>  <!-- Button trigger modal -->
                 <div class="d-flex justify-content-center">                   
-                <button type="button" class="btn btn-primary btn-lg" onclick="updateSuggestions()" data-bs-toggle="modal" data-bs-target="#suggestionModal">Get Metadata Completeness Suggestions</button> 
+                <button type="button" id="submission" class="btn btn-primary btn-lg" onclick="updateSuggestions(googleJSON)" data-bs-toggle="modal" data-bs-target="#suggestionModal" disabled>Get Metadata Completeness Suggestions</button> 
                 </div>
               
 
@@ -246,9 +246,64 @@
 	  </body>		
     <script src="js/metadata.js"></script>
     <script>
-      console.log(metadata);
+      //console.log(metadata);
+      var googleJSON;
+
+      function csvJSON(csv){
+
+        var lines=csv.split("\n");
+
+        var result = [];
+        var headers=lines[0].split(",");
+
+        for(var i=1;i<lines.length;i++){
+
+            var obj = {};
+            var currentline=lines[i].split(",");
+
+            for(var j=0;j<headers.length;j++){
+                obj[headers[j]] = currentline[j];
+            }
+
+            result.push(obj);
+
+        }
+
+        //return result; //JavaScript object
+        return JSON.stringify(result); //JSON
+        }
+
+      async function fetchGoogleCSV(){
+        try {
+          //read .csv file on a server
+          const target = `https://docs.google.com/spreadsheets/d/e/2PACX-1vRCAlGxBM7PSg4x6Di4cWHH4B6m1eKFXyPwWOdBpEkS2P5h0JU9YGdyoftIxqwEAcnA0Np3t-CrScBZ/pub?gid=0&single=true&output=csv`;
+
+          const res = await fetch(target, {
+              method: 'get',
+              headers: {
+                  'content-type': 'text/csv;charset=UTF-8',
+              }
+          });
+
+          if (res.status === 200) {
+              const data = await res.text();
+              googleJSON =JSON.parse(csvJSON(data)),
+              document.getElementById("submission").disabled = false;
+
+          } else {
+              console.log(`Error code ${res.status}`);
+          }
+      } catch (err) {
+          console.log(err)
+      }
+
+      }
       
-      function updateSuggestions(){
+      fetchGoogleCSV()
+        .then(metadata = googleJSON)
+        .catch(err => {consloe.log("fetch of google csv failed, error is ", err)})
+
+      function updateSuggestions(metadata){
         let suggestionContent = document.getElementById("suggestionContent");
         suggestionContent.innerHTML= "";
         function getChecked(nodes){
@@ -310,6 +365,11 @@
                    ")</span><br><a href='"+element.link +"' class='smallRef'> Click here to learn more about "
                     +element.acronym +"</a> <br> <a href='"+element.submission +"' class='smallRef'> Click here for metadata list </a><br>");
                    break;
+                   case "Template":
+                   swateText[loc] +=   ("<b>"+element.description + "</b> <span class='description'>"+" " +
+                   "</span><br><a href='"+element["template\r"] +"' class='smallRef'> Click here to learn more about "
+                    +element.description +"</a> <br> ");
+                   break;
                 }
                 
               
@@ -355,7 +415,7 @@
                                       `+misText[loc]+`
                                     </td>
                                     <td>
-                                      ...
+                                      `+swateText[loc]+`
                                     </td>
                                   </tr>
                                   `
