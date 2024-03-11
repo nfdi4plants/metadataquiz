@@ -198,6 +198,19 @@
                           Proteomic
                         </label>
                       </div>
+
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="ModelCheck" checked=true>
+                        <label class="form-check-label" for="ModelCheck">
+                          Model
+                        </label>
+                      </div>
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="ImagesCheck" checked=true>
+                        <label class="form-check-label" for="ImagesCheck">
+                          Images
+                        </label>
+                      </div>
                     </div>
                 </div>  <!-- Button trigger modal -->
                 <div class="d-flex justify-content-center">                   
@@ -212,8 +225,11 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="suggestionModalLabel">Based on your answers, we think the following information can be a good starting point for your metadata annotation:</h5>
+                
+                
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
+              <span class="m-3" >If this information does not fit your experimental setup, you still use swate and ARCitect to manamgement your research data </span>
               <div class="modal-body">
                 <table class="table table-hover">
                   <thead>
@@ -354,6 +370,12 @@
                   case "proteomic":
                   loc = 4;
                   break;
+                  case "model":
+                  loc = 5;
+                  break;
+                  case "images":
+                  loc = 6;
+                  break;
                 }
                 
                 
@@ -408,6 +430,12 @@
                   break;
                   case "proteomic":
                   loc = 4;
+                  break;
+                  case "model":
+                  loc = 5;
+                  break;
+                  case "images":
+                  loc = 6;
                   break;
                 }
                   var htmlText = `<tr>
