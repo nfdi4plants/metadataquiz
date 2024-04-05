@@ -406,19 +406,22 @@
                 
                 switch(element.type){
                   case "Repository":
-                    repoText[loc] += ("<b>"+element.acronym + "</b> <span class='description'>("+element.description +
-                    ")</span><br><a href='"+element.link +"' class='smallRef'> Click here to learn more about "+
-                      element.acronym +"</a> <br> <a href='"+element.submission +"' class='smallRef'> Click here for metadata list </a><br>");
+                    repoText[loc] += "<b>"+element.acronym + "</b>"+ 
+                    "<span class='description'>("+element.description +")</span>"+
+                    "<br> <a href='"+element.link +"' target='_blank' class='smallRef'> Click here to learn more about "+ element.acronym +"</a>"+
+                    "<br> <a href='"+element.submission +"' target='_blank' class='smallRef'> Click here for metadata list </a>"+
+                    "<br>";
                   break;
                   case "Minimum Information standards":
-                   misText[loc] +=   ("<b>"+element.acronym + "</b> <span class='description'>("+element.description +
-                   ")</span><br><a href='"+element.link +"' class='smallRef'> Click here to learn more about "
-                    +element.acronym +"</a> <br> <a href='"+element.submission +"' class='smallRef'> Click here for metadata list </a><br>");
+                   misText[loc] +=   "<b>"+element.acronym + "</b>"+ 
+                    "<span class='description'>("+element.description +")</span>"+
+                    "<br> <a href='"+element.link +"' target='_blank' class='smallRef'> Click here to learn more about "+ element.acronym +"</a>"+
+                    "<br> <a href='"+element.submission +"' target='_blank' class='smallRef'> Click here for metadata list </a>"+
+                    "<br>";
                    break;
                    case "Template":
-                   swateText[loc] +=   ("<b>"+element.description + "</b> <span class='description'>"+" " +
-                   "</span><br><a href='"+element["template"] +"' class='smallRef'> Click here to access the SWATE template for "
-                    +element.description +"</a> <br> ");
+                   swateText[loc] +=   "<b>"+element.description + "</b> <span class='description'> </span>"+
+                   "<br><a href='"+element["template"] +"' target='_blank' class='smallRef'> Click here to access the SWATE template for "+element.description +"</a> <br> ";
                    break;
                 }
                 
