@@ -405,13 +405,14 @@
                 const description = ((element.description == element.acronym)||(element.description==""))? "":"<span class='description'>&nbsp("+element.description +")</span>";
                 const metadataLink = (element.link=="")?"":"<br> <a href='"+element.link +"' target='_blank' class='smallRef'> Click here to learn more about "+ element.acronym +"</a>";
                 const metadataSubmission = (element.submission=="")?"":"<br> <a href='"+element.submission +"' target='_blank' class='smallRef'> Click here for metadata list </a>";
-                
+                const submissionLink = (element.submission=="")?"":"<br> <a href='"+element.submission +"' target='_blank' class='smallRef'> Click here for submission </a>";
+
                 switch(element.type){
                   case "Repository":
                     repoText[loc] += "<b>"+element.acronym + "</b>"+ 
                     description +
                     metadataLink +
-                    metadataSubmission+
+                    submissionLink+
                     "<br>";
                   break;
                   case "Minimum Information standards":
