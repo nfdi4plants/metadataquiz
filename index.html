@@ -19,6 +19,14 @@
 		<link href="favicon.png" rel="icon">
 		
 		<style>
+      .custom-popover {
+        --bs-popover-max-width: 500px;
+        --bs-popover-border-color: var(--bs-primary);
+        --bs-popover-header-bg: var(--bs-primary);
+        --bs-popover-header-color: var(--bs-white);
+        --bs-popover-body-padding-x: 1rem;
+        --bs-popover-body-padding-y: .5rem;
+      }
       .smallRef{
         font-size: 0.7rem;
         line-height: 0.9rem;
@@ -45,10 +53,10 @@
 		</style>
 			</head>
 			
-		<body  class="d-grid gap-5" style="background: rgb(45, 62, 80, 0.2); "  >
+		<body  class="d-grid gap-4 mx-4" style="background: rgb(45, 62, 80, 0.2); "  >
 		
 	
-				<div class="row" style="background: rgb(45, 62, 80); height: 3.25rem; margin: 0 0 0 0px; padding: 0 0 0 0; ">
+				<div class="row d-none" style="background: rgb(45, 62, 80); height: 3.25rem; margin: 0 0 0 0px; padding: 0 0 0 0; ">
 					<a class="" href="https://nfdi4plants.org/" >
 						<img src="images/logo.png" alt="Logo" width="32" height="32" style="position: absolute; margin: 8px 12px 8px 12px; left: 0px; padding-top: 0px;" />
 					</a>
@@ -85,8 +93,8 @@
 					</div>
 				</div>
 				
-                <div id="q1" class="container-sm d-grid gap-3" >
-                  <h2 class=" d-flex justify-content-center "> Metadata Quiz </h2>
+                <div id="q1" class="container-lg d-grid gap-3" >
+                  <h3 class=" d-flex justify-content-center "> Metadata Quiz </h3>
                   <div class=" d-flex justify-content-center ">
                     This quiz is meant to help you find the metadata checklists and endpoint repositories best suited for your data. <br>
                   </div>
@@ -141,7 +149,7 @@
                 </div>
 			
 
-                <div id="q2" class="container-sm d-grid gap-3" >
+                <div id="q2" class="container-lg d-grid gap-3" >
                     <div class=" d-flex justify-content-center ">
                       <h4>What environment(s) will the experiment(s) take place in?</h4> 
                     </div>
@@ -175,7 +183,7 @@
                     </div>
                 </div>
 
-                <div class="container-sm d-grid gap-3" >
+                <div class="container-lg d-grid gap-3" >
                     <div class=" d-flex justify-content-center ">
                         <h4>What type(s) of data will be collected?</h4> 
                     </div>
@@ -241,15 +249,15 @@
 
         <!-- Modal -->
         <div class="modal modal-xl fade" id="suggestionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="suggestionModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-dialog modal-fullscreen-xxl-down modal-dialog-scrollable">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="suggestionModalLabel">Based on your answers, we think the following information can be a good starting point for your metadata annotation:</h5>
+                <h5 class="modal-title" id="suggestionModalLabel">Your starting point for metadata annotation   <a type="button" data-bs-custom-class="custom-popover" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Based on your answers, we think the following information can be a good starting point for your metadata annotation. The information in this table focuses on the most common plant experiments. If this quiz does not fit your experimental setup, you will still be able to use the DataPLANT tools, such as Swate and ARCitect, to manage your data." class="text-success">&#128712;</a> </h5>
                 
                 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <span class="m-3" >The information in this table focuses on the most common plant experiments. If this quiz does not fit your experimental setup, you will still be able to use the DataPLANT tools, such as Swate and ARCitect, to manage your data.</span>
+              
               <div class="modal-body">
                 <table class="table table-hover">
                   <thead>
@@ -283,6 +291,8 @@
     <script src="js/metadata.js"></script>
     <script>
       //console.log(metadata);
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+      const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
       var googleJSON;
 
       function csvJSON(csv){
