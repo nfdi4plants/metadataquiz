@@ -27,7 +27,9 @@
     zoom:3;
 }
 
-
+table {
+line-height: 1.1em;
+}
 
 .parallax {
   /* The image used */
@@ -191,7 +193,6 @@ padding:0;
 }
 
 
-
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
 	color:#000000;
     background-color: rgba(255,255,255,0.6);
@@ -232,10 +233,6 @@ padding-bottom: 0.3rem;
 	
 }
 
-.form-data_type {
-	
-	
-}
 
 label {
    display:inline;
@@ -254,6 +251,10 @@ span{
 }
 p{
 	color:inherit;
+    margin-bottom: 0px;
+    margin-top: 0.3rem;
+    font-family:"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
 	
 }
 .form-check-input:checked {
@@ -271,8 +272,6 @@ p{
 }
 
 .border-highlight{
-    background: ; 
-
 	box-shadow:  inset 0 0 3px 1px #c21f3a;
 }
 

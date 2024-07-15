@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 		<head>
 		<meta http-equiv="Content-Type" charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Metadata recommendation tool is developed by DataPLANT and IBG-4 of Research Center Jülich. The motivation is to make metadata annotation more approachable. To support researchers with metadata annotation over the entire investigation lifecycle.">
@@ -14,11 +14,14 @@
 		<!-- loading css styleSheets -->
 
 		<link href="css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="css/custom.css" rel="stylesheet"/>
+        <link href="css/custom1507.css" rel="stylesheet"/>
 		<script src="js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"> </script>		
 		<link href="favicon.png" rel="icon">
 		
 		<style>
+      body{
+        font-size: 1.0rem;
+      }
       .custom-popover {
         --bs-popover-max-width: 500px;
         --bs-popover-border-color: var(--bs-primary);
@@ -33,7 +36,9 @@
       }
       .description{
         font-size: 0.9rem;
-        line-height: 1.1rem;
+        line-height: 1.2rem;
+        padding-top: 0.5rem;
+        display:inline;
       }
       button:disabled{
           border: 1px solid #999999 !important;
@@ -414,28 +419,28 @@
                   break;
                 }
                 const description = ((element.description == element.acronym)||(element.description==""))? "":"<span class='description'>&nbsp("+element.description +")</span>";
-                const metadataLink = (element.link=="")?"":"<br> <a href='"+element.link +"' target='_blank' class='smallRef'> Click here to learn more about "+ element.acronym +"</a>";
+                const metadataLink = (element.link=="")?"":" <a href='"+element.link +"' target='_blank' class='smallRef'> Click here to learn more about "+ element.acronym +"</a>";
                 const metadataSubmission = (element.submission=="")?"":"<br> <a href='"+element.submission +"' target='_blank' class='smallRef'> Click here for metadata list </a>";
                 const submissionLink = (element.submission=="")?"":"<br> <a href='"+element.submission +"' target='_blank' class='smallRef'> Click here for submission </a>";
 
                 switch(element.type){
                   case "Repository":
-                    repoText[loc] += "<b>"+element.acronym + "</b>"+ 
-                    description +
+                    repoText[loc] += "<p><span class='description'><b>"+element.acronym + "</b></span>"+ 
+                    description +"</p>" +
                     metadataLink +
                     submissionLink+
                     "<br>";
                   break;
                   case "Minimum Information standards":
-                   misText[loc] +=   "<b>"+element.acronym + "</b>"+ 
-                   description +
+                   misText[loc] +=   "<p><span class='description'><b>"+element.acronym + "</b></span>"+ 
+                   description +"</p>"+
                    metadataLink+
                    metadataSubmission+
                     "<br>";
                    break;
                    case "Template":
-                   swateText[loc] +=   "<b>"+element.description + "</b> <span class='description'> </span>"+
-                   "<br><a href='"+element["template"] +"' target='_blank' class='smallRef'>"+
+                   swateText[loc] +=   "<p><span class='description'><b>"+element.description + "</b></span> <span class='description'> </span></p>"+
+                   "<a href='"+element["template"] +"' target='_blank' class='smallRef'>"+
                     " Click here to access the SWATE template for "+element.description +"</a> <br> ";
                    break;
                 }
