@@ -245,7 +245,75 @@
                         </label>
                       </div>
                     </div>
-                </div>  <!-- Button trigger modal -->
+                </div>  
+                
+                <div class="container-lg d-grid gap-3" >
+                    <div class=" d-flex justify-content-center ">
+                        <h4>What archive or repository are you planning on uploading your data to?</h4> 
+                    </div>
+                    
+                    <div id="q4" class="row justify-content-md-center">
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="ENACheck" >
+                        <label class="form-check-label" for="ENACheck">
+                          ENA
+                        </label>
+                      </div>
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="GEOCheck" >
+                        <label class="form-check-label" for="GEOCheck">
+                          GEO
+                        </label>
+                      </div>
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="PRIDECheck" >
+                        <label class="form-check-label" for="PRIDECheck">
+                          PRIDE
+                        </label>
+                      </div>
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox"  value="" id="MetaboLightsCheck" >
+                        <label class="form-check-label" for="MetaboLightsCheck">
+                          MetaboLights
+                        </label>
+                      </div>
+
+                      <!-- <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="ProteomicCheck" >
+                        <label class="form-check-label" for="ProteomicCheck">
+                          Proteomic
+                        </label>
+                      </div>
+
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="ModelCheck" >
+                        <label class="form-check-label" for="ModelCheck">
+                          Model
+                        </label>
+                      </div>
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="ImagesCheck" >
+                        <label class="form-check-label" for="ImagesCheck">
+                          Images
+                        </label>
+                      </div> -->
+                      <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="RPOthersCheck" >
+                        <label class="form-check-label" for="RPOthersCheck">
+                          Others
+                        </label>
+                      </div>
+                                            <div class="col-auto form-check   form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="IDKCheck" >
+                        <label class="form-check-label" for="IDKCheck">
+                          I don’t know
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                
+                
+                <!-- Button trigger modal -->
                 <div class="d-flex justify-content-center">                   
                 <button type="button" id="submission" class="btn btn-primary btn-lg" onclick="updateSuggestions(googleJSON)" data-bs-toggle="modal" data-bs-target="#suggestionModal" disabled>Click here to get metadata checklist suggestions</button> 
                 </div>
@@ -257,7 +325,9 @@
           <div class="modal-dialog modal-fullscreen-xxl-down modal-dialog-scrollable">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="suggestionModalLabel">Your starting point for metadata annotation   <a type="button" data-bs-custom-class="custom-popover" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Based on your answers, we think the following information can be a good starting point for your metadata annotation. The information in this table focuses on the most common plant experiments. If this quiz does not fit your experimental setup, you will still be able to use the DataPLANT tools, such as Swate and ARCitect, to manage your data." class="text-success">&#128712;</a> </h5>
+                <h5 class="modal-title" id="suggestionModalLabel">Your starting point for metadata annotation   <a type="button" data-bs-custom-class="custom-popover" data-bs-html="true" data-bs-toggle="popover" data-bs-placement="right" data-bs-content='Based on your answers, we think the following information can be a good starting point for your metadata annotation. The information in this table focuses on the most common plant experiments. If this quiz does not fit your experimental setup, you will still be able to use the DataPLANT tools, such as <a href="https://nfdi4plants.org/nfdi4plants.knowledgebase/vault/swate-quickstart/" target="_blank" class="text-success"><b>Swate</b></a> and <a href="https://nfdi4plants.github.io/nfdi4plants.knowledgebase/arcitect/" target="_blank" class="text-success"><b>ARCitect</b></a>, to manage your data. Are you looking for a template to help describe the columns within your data sheet? Try creating a <a href="https://nfdi4plants.github.io/nfdi4plants.knowledgebase/start-here/datamap" target="_blank" class="text-success"><b>datamap</b></a> instead!' class="text-success">&#128712;</a> 
+                
+                </h5>
                 
                 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -328,9 +398,7 @@
         try {
           //read .csv file on a server
           const target = `https://docs.google.com/spreadsheets/d/e/2PACX-1vRCAlGxBM7PSg4x6Di4cWHH4B6m1eKFXyPwWOdBpEkS2P5h0JU9YGdyoftIxqwEAcnA0Np3t-CrScBZ/pub?gid=0&single=true&output=csv`;
-
           const res = await fetch(target, {
-           
               method: 'get',
               headers: {
                 
@@ -371,9 +439,11 @@
         const q1 = document.getElementById("q1").querySelectorAll(".form-check-input");
         const q2 = document.getElementById("q2").querySelectorAll(".form-check-input");
         const q3 = document.getElementById("q3").querySelectorAll(".form-check-input");
+        const q4 = document.getElementById("q4").querySelectorAll(".form-check-input");
         let q1Ids = getChecked(q1);
         let q2Ids = getChecked(q2);
         let q3Ids = getChecked(q3);
+        let q4Ids = getChecked(q4);
         
         let repoText  =   ["","","","","","","",""];
         let misText   =   ["","","","","","","",""];
@@ -381,6 +451,8 @@
         
         
           
+
+        
           for ( const  [index, element] of metadata.entries() ){
             const list = element.q1.replaceAll(" ", "").split(";");
 
@@ -389,7 +461,7 @@
 
               for (const idd in q3Ids){
               
-              if (element["biological data domain"].toLowerCase().includes(q3Ids[idd].toLowerCase())){
+              if (element["biological data domain"].toLowerCase().includes(q3Ids[idd].toLowerCase()) && ( q4Ids.some(keyword => element.description.toLowerCase().includes(keyword.toLowerCase()) ) || q4Ids.length == 0 || q4Ids.includes("IDK") || q4Ids.includes("RPOther")   )){
                 console.log(element["biological data domain"]+ " include "+ q3Ids[idd].toLowerCase())
                 var loc;
                 switch(q3Ids[idd].toLowerCase()){
@@ -419,9 +491,9 @@
                   break;
                 }
                 const description = ((element.description == element.acronym)||(element.description==""))? "":"<span class='description'>&nbsp("+element.description +")</span>";
-                const metadataLink = (element.link=="")?"":" <a href='"+element.link +"' target='_blank' class='smallRef'> Click here to learn more about "+ element.acronym +"</a>";
-                const metadataSubmission = (element.submission=="")?"":"<br> <a href='"+element.submission +"' target='_blank' class='smallRef'> Click here for metadata list </a>";
-                const submissionLink = (element.submission=="")?"":"<br> <a href='"+element.submission +"' target='_blank' class='smallRef'> Click here for submission </a>";
+                const metadataLink = (element.link=="")?"":" <span class='smallRef'> Click  <a href='"+element.link +"' class='text-success' target='_blank' >here</a> to learn more about "+ element.acronym +"</span>";
+                const metadataSubmission = (element.submission=="")?"":"<br> <span class='smallRef'> Click <a href='"+element.submission +"' target='_blank' class='text-success' >here</a> for metadata list</span>";
+                const submissionLink = (element.submission=="")?"":"<span class='smallRef'> Click <br> <a href='"+element.submission +"' target='_blank' class='text-success' >here</a> for submission </span>>";
 
                 switch(element.type){
                   case "Repository":
@@ -440,24 +512,15 @@
                    break;
                    case "Template":
                    swateText[loc] +=   "<p><span class='description'><b>"+element.description + "</b></span> <span class='description'> </span></p>"+
-                   "<a href='"+element["template"] +"' target='_blank' class='smallRef'>"+
-                    " Click here to access the SWATE template for "+element.description +"</a> <br> ";
+                   "<span class='smallRef'> Click <a class='text-success' href='"+element["template"] +"' target='_blank' >here</a> to access the SWATE template for "+element.description +" <br> </span>";
                    break;
                 }
                 
               
                 
-              }
-              
-
+              }              
             }
-  
-
-
-
           } 
-
-
         }
 
           
