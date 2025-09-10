@@ -473,7 +473,7 @@
 
               for (const idd in q3Ids){
               
-              if (element["biological data domain"].toLowerCase().includes(q3Ids[idd].toLowerCase()) && ( q4Ids.some(keyword => element.description.toLowerCase().includes(keyword.toLowerCase()) ) || q4Ids.length == 0 || q4Ids.includes("IDK") || q4Ids.includes("RPOthers")   )){
+              if ((element["biological data domain"].toLowerCase().includes(q3Ids[idd].toLowerCase()) ) && ( q4Ids.some(keyword => (element.description.toLowerCase().includes(keyword.toLowerCase())||element.acronym.toLowerCase().includes(keyword.toLowerCase()) ) ) || q4Ids.length == 0 || q4Ids.includes("IDK") || q4Ids.includes("RPOthers")   )){
                 console.log(element["biological data domain"]+ " include "+ q3Ids[idd].toLowerCase())
                 var loc;
                 switch(q3Ids[idd].toLowerCase()){
