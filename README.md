@@ -28,4 +28,5 @@ Once the quiz is completed, the tool compiles and displays a list with direct li
 
 ## Usage
 
-[Access it by a single click](https://nfdi4plants.org/nfdi4plants.knowledgebase/docs/implementation/MetadataQuiz.html)
+Access it by a single [ click](https://nfdi4plants.github.io/metadataquiz/)  
+Or access it via [DataPLANT knowledgebase](https://nfdi4plants.github.io/nfdi4plants.knowledgebase/resources/metadata-quiz/)
